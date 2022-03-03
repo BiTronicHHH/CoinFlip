@@ -8,7 +8,7 @@ contract CoinflipFactory {
         deployedCampaigns.push(newCampagin);
     }
 
-    function getDeployedCampaigns() public view returns (address[]) {
+    function getDeployedCampaigns() public view returns (address[] memory) {
         return deployedCampaigns;
     }
 }
@@ -34,7 +34,7 @@ contract Coinflip {
         _;
     }
 
-    function Coinflip(uint256 minimum, address creator) public {
+    constructor (uint256 minimum, address creator) public {
         manager = creator;
         minimumContribution = minimum;
     }
@@ -47,7 +47,7 @@ contract Coinflip {
     }
 
     function createRequest(
-        string description,
+        string memory description,
         uint256 value,
         address recipient
     ) public restricted {
