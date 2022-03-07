@@ -34,7 +34,7 @@ contract Coinflip {
         _;
     }
 
-    function Coinflip (uint256 minimum, address creator) public {
+    constructor (uint256 minimum, address creator) public {
         manager = creator;
         minimumContribution = minimum;
     }
